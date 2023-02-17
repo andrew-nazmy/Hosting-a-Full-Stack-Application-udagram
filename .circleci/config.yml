@@ -39,6 +39,7 @@ jobs:
           name: Front-End Build
           command: |
             npm run frontend:build
+            cd udagram-frontend
             pwd
             ls
       # TODO: Build the backend API      
