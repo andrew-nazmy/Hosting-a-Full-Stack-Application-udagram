@@ -62,7 +62,7 @@ jobs:
             echo "# TODO: Install, build, deploy in both apps"
             npm run frontend:install
             npm run frontend:build
-            cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram
+            cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram && cd ..
             npm run api:install
             curl -O https://bootstrap.pypa.io/get-pip.py
             python get-pip.py --user
