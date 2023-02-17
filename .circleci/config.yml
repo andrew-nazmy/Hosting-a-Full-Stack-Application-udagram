@@ -60,6 +60,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
+            pwd
             aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram
             eb use udagram-api-dev
             eb deploy udagram-api-dev
