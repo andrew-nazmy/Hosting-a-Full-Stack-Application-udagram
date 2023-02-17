@@ -63,11 +63,6 @@ jobs:
             npm run frontend:install
             npm run frontend:build
             cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram && cd ..
-            npm run api:install
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python get-pip.py --user
-            python -m pip install awsebcli --upgrade --user
-            echo 'export PATH=~/.local/bin/:$PATH' >> $BASH_ENV
             cd udagram-api && eb init udagram-api --platform node.js --region us-east-1
             cd udagram-api && eb create --sample udagram-api-dev
             cd udagram-api && eb use udagram-api-dev
