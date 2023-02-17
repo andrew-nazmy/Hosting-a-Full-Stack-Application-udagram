@@ -63,11 +63,9 @@ jobs:
             npm run frontend:install
             npm run frontend:build
             cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram && cd ..
-            eb --version
-            cd udagram-api && eb --version
             cd udagram-api && eb init udagram-api --platform node.js --region us-east-1
-            cd udagram-api && eb create --sample udagram-api-dev
-            cd udagram-api && eb use udagram-api-dev
+            eb create --sample udagram-api-dev
+            eb use udagram-api-dev
             eb setenv AWS_BUCKET=$AWS_BUCKET
             eb setenv AWS_PROFILE=$AWS_PROFILE
             eb setenv AWS_REGION=$AWS_DEFAULT_REGION	
@@ -79,8 +77,8 @@ jobs:
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv URL=$URL
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-            cd udagram-api && npm run build
-            cd udagram-api && eb deploy udagram-api-dev
+            npm run build
+            eb deploy udagram-api-dev
 
             
 workflows:
