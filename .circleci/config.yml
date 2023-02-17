@@ -63,6 +63,8 @@ jobs:
             npm run frontend:install
             npm run frontend:build
             cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram && cd ..
+            eb --version
+            cd udagram-api && eb --version
             cd udagram-api && eb init udagram-api --platform node.js --region us-east-1
             cd udagram-api && eb create --sample udagram-api-dev
             cd udagram-api && eb use udagram-api-dev
