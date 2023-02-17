@@ -38,6 +38,8 @@ jobs:
       - run:
           name: Front-End Build
           command: |
+            pwd
+            ls
             npm run frontend:build
       # TODO: Build the backend API      
       - run:
@@ -61,6 +63,7 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             pwd
+            ls
             aws s3 cp --recursive --acl public-read ./www s3://nazmy-udagram
             eb use udagram-api-dev
             eb deploy udagram-api-dev
