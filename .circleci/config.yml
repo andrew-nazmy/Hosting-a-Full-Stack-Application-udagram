@@ -60,6 +60,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
+            cd udagram-frontend && ls&& cd ..
             npm run frontend:deploy && cd ..
             eb use udagram-api-dev
             eb setenv AWS_BUCKET=$AWS_BUCKET
