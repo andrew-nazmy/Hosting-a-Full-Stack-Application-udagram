@@ -60,10 +60,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-            npm run frontend:install
-            npm run frontend:build
-            npm run frontend:deploy
-            npm run api:install
+            npm run frontend:deploy && cd ..
             eb use udagram-api-dev
             eb setenv AWS_BUCKET=$AWS_BUCKET
             eb setenv AWS_PROFILE=$AWS_PROFILE
@@ -76,7 +73,6 @@ jobs:
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv URL=$URL
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-            npm run api:build
             npm run api:deploy
 workflows:
   udagram:
