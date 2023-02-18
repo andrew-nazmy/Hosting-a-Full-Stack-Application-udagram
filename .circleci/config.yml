@@ -64,7 +64,11 @@ jobs:
             cd udagram-frontend && ls && cd ..
             npm run frontend:install 
             npm run frontend:build 
-            npm run frontend:deploy 
+            npm run frontend:deploy
+            sudo apt-get -y -qq update
+            sudo apt-get install python3-pip python-dev build-essential
+            sudo pip install --upgrade setuptools
+            sudo pip install awsebcli --upgrade 
             npm run api:build
             npm run api:deploy
 workflows:
