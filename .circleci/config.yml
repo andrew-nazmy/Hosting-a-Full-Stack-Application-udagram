@@ -61,13 +61,10 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-            aws configure list-profiles
-            cat $HOME/.aws/config
             npm run frontend:install 
             npm run frontend:build 
             npm run frontend:deploy
             npm run api:build
-            npm run api:aws-eb
             npm run api:deploy
 workflows:
   udagram:
