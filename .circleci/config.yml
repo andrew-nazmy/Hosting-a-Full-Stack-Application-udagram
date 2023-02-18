@@ -29,7 +29,6 @@ jobs:
           name: Install API Dependencies
           command: |
            npm run api:install
-           ls
       # TODO: Lint the frontend
       - run:
           name: Front-End Lint
@@ -45,6 +44,7 @@ jobs:
           name: API Build
           command: |
             npm run api:build
+
   # deploy step will run only after manual approval
   deploy:
     docker:
@@ -62,6 +62,7 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             cd udagram-frontend && ls&& cd ..
+            npm run frontend:build && cd ..
             npm run frontend:deploy && cd ..
             eb use udagram-api-dev
             eb setenv AWS_BUCKET=$AWS_BUCKET
