@@ -1,0 +1,15 @@
+AWS
+database
+The application server uses AWS RDS Postgres as database.
+URI: database-1.cizen6ykk29w.us-east-1.rds.amazonaws.com
+username:postgres
+password:12345678
+database name: udagram
+
+Elastic Beanstalk
+The application server is deployed on AWS Elastic Beanstalk service.
+EB URL: http://udagram-api-dev.eba-nicb2zmx.us-east-1.elasticbeanstalk.com/
+
+S3 Bucket
+The frontend application is deployed on AWS S3 Bucket. 
+S3 bucket URL: http://nazmy-udagram.s3-website-us-east-1.amazonaws.com/
