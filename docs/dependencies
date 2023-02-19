@@ -1,0 +1,7 @@
+project Dependencies
+
+- Node v14.15
+- npm 6.14.8
+- AWS CLI v2
+- Postgres RDS database
+- S3 bucket 
