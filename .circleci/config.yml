@@ -77,7 +77,7 @@ jobs:
             eb setenv POSTGRES_HOST=$POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv URL=$URL
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME && cd ..
             npm run api:deploy
 workflows:
   udagram:
