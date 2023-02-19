@@ -1,0 +1,23 @@
+circleci/config.yml contains the pipeline to deploy the app.
+
+it contains 2 main jobs (build/deploy)
+
+build job contains the following:
+ # install node and checkout code
+ # Use root level package.json to install dependencies in the frontend app
+ # Install dependencies in the the backend API   
+ # Lint the frontend
+ # Build the frontend app
+ # Build the backend API
+ 
+after making sure that the app is built successfully the pipeline will require user approval to proceed to the next job
+
+deploy job contains the following:
+ # setup needed for aws, node, elastic beanstalk
+ # install frontend
+ # build frontend
+ # deploy frontend
+ # install backend
+ # build backend
+ # set eb environment variable
+ # deploy environment 
